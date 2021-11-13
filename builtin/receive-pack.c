@@ -170,7 +170,7 @@ static int receive_pack_config(const char *var, const char *value, void *cb)
 			strbuf_addf(&fsck_msg_types, "%c%s=%s",
 				fsck_msg_types.len ? ',' : '=', var, value);
 		else
-			warning("Skipping unknown msg id '%s'", var);
+			warning("skipping unknown msg id '%s'", var);
 		return 0;
 	}
 
@@ -1584,9 +1584,9 @@ static const char *update(struct command *cmd, struct shallow_info *si)
 		if (!parse_object(the_repository, old_oid)) {
 			old_oid = NULL;
 			if (ref_exists(name)) {
-				rp_warning("Allowing deletion of corrupt ref.");
+				rp_warning("allowing deletion of corrupt ref");
 			} else {
-				rp_warning("Deleting a non-existent ref.");
+				rp_warning("deleting a non-existent ref");
 				cmd->did_not_exist = 1;
 			}
 		}
