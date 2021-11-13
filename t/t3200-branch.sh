@@ -866,7 +866,7 @@ test_expect_success '--set-upstream-to fails on a missing src branch' '
 '
 
 test_expect_success '--set-upstream-to fails on a non-ref' '
-	echo "fatal: Cannot setup tracking information; starting point '"'"'HEAD^{}'"'"' is not a branch." >expect &&
+	echo "fatal: cannot set up tracking information; starting point '"'"'HEAD^{}'"'"' is not a branch" >expect &&
 	test_must_fail git branch --set-upstream-to HEAD^{} 2>err &&
 	test_cmp expect err
 '
